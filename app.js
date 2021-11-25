@@ -1,11 +1,17 @@
 const app = Vue.createApp({
   data() {
     return {
-      message: 'Hello Vue.js!',
+      playerHealth: 100,
+      monsterHealth: 100,
     }
   },
 
-  methods: {},
+  methods: {
+    attackMonster() {
+      const attackValue = Math.floor(Math.random() * (12 - 5) + 5)
+      this, (monsterHealth -= attackValue)
+    },
+  },
 })
 
 app.mount('#game')
